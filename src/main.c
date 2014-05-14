@@ -6,9 +6,10 @@
 /*   By: jbernabe <jbernabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/14 17:47:16 by jbernabe          #+#    #+#             */
-/*   Updated: 2014/05/11 17:17:07 by jbernabe         ###   ########.fr       */
+/*   Updated: 2014/05/14 21:59:57 by jbernabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 /*
  * la primera cosa que quisiera hacer es de 
  * hacer un parsin de la cadena en caso de que tenga una letra
@@ -18,48 +19,50 @@
 #include "libft.h"
 #include "push_swap.h"
 
-int			ft_verify_list(t_swap *l)
+static void		ft_sort_list2(t_swap **la, t_swap **lb, int *is_sort)
 {
-	t_swap	*temp;
-	int		i;
-
-	temp = l;
-	i = 0;
-	while (temp != NULL)
+	if ((*la)->numb > (*la)->next->numb)
 	{
-		if (i > 2)
-			return (0)
-		temp = temp->next;
-		i++;
+		ft_sort_ra(la);
+		*is_sort = 0;
 	}
-	return (1);
-}
-
-void		ft_sort_sa(t_swap **la)
-{
-	t_swap 	*temp;
-
-	temp = la;
-	
+	if (((*la)->numb) > (*la)->next->numb)
+	{
+		ft_sort_sa(la);
+		*is_sort = 0;
+	}
+	(void)lb;
 }
 
 void		ft_sort_list(t_swap **la, t_swap **lb)
 {
 	t_swap	*temp;
-	int		count;
+	int		is_sort;
 
-	temp = la;
-	count = 0;
-	if (ft_verify(*la) == 0)
+	temp = *la;
+	is_sort = 0;
+	if (ft_verify_list(temp) == 1)
 	{
-		ft_sort_sa(la);
+		while (!is_sort)
+		{
+			is_sort = 1;
+			while (temp != NULL)
+			{
+				if ((*la)->numb && (*la)->next->numb && la && temp)
+				{
+					ft_sort_list2(la, lb, &is_sort);
+				}
+				temp = temp->next;
+			}
+		}
 	}
+	(void)lb;
 }
 
 void		ft_get_list(char **av)
 {
 	int		i;
-	t_swap	*la
+	t_swap	*la;
 	t_swap	*lb;
 
 	la = NULL;

@@ -1,50 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   local_tools.c                                      :+:      :+:    :+:   */
+/*   fct_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbernabe <jbernabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/05/14 15:02:50 by jbernabe          #+#    #+#             */
-/*   Updated: 2014/05/14 18:41:30 by jbernabe         ###   ########.fr       */
+/*   Created: 2014/05/14 16:00:37 by jbernabe          #+#    #+#             */
+/*   Updated: 2014/05/14 20:01:01 by jbernabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-int			ft_verify_list(t_swap *l)
+void		ft_sort_sa(t_swap **la)
 {
-	t_swap	*temp;
-	int		i;
+	int		tmp;
 
-	temp = l;
-	i = 0;
-	while (temp != NULL)
-	{
-		if (i > 0)
-			return (1);
-		temp = temp->next;
-		i++;
-	}
-	return (0);
+	tmp = (*la)->numb;
+	(*la)->numb = (*la)->next->numb;
+	(*la)->next->numb = tmp;
 }
 
-int		ft_verify(char *s)
+void		ft_sort_ra(t_swap **la)
 {
-	int	i;
+	int		tmp;
+	t_swap	*temp_list;
 
-	i = 0;
-	if (ft_fast_strlen(s) > 9)
-	{
-		ft_putendl("int too long");
-		exit(0);
-	}
-	while (s[i] != '\0')
-	{
-		if (ft_isalpha(s[i]) == 1)
-			return (1);
-		i++;
-	}
-	return (0);
+	temp_list = *la;
+	tmp = (*la)->numb;
+	while (temp_list->next != NULL)
+		temp_list = temp_list->next;
+	(*la)->numb = (temp_list)->numb;
+	temp_list->numb = tmp;
 }
