@@ -18,33 +18,17 @@
 #include "libft.h"
 #include "push_swap.h"
 
-int			ft_is_sort(t_swap *list)
-{
-	t_swap *temp;
-
-	temp = list;
-	while
-}
 void		ft_sort_list(t_swap **la, t_swap **lb)
 {
 	t_swap	*temp;
-	int		is_sort;
 
 	temp = *la;
-	is_sort = 0;
 	if (ft_verify_list(temp) == 1)
 	{
-		while (!is_sort)
+		while (!ft_is_sort(*la))
 		{
-			is_sort = 1;
-			while (temp->next != NULL)
-			{
-				if ((temp)->numb && (temp)->next->numb && temp)
-				{
-					ft_sort_list2(&temp, lb, &is_sort);
-				}
-				temp = temp->next;
-			}
+			if (temp->next && (temp)->numb && (temp)->next->numb)
+			 	ft_sort_list2(&temp, lb);
 		}
 	}
 	(void)lb;

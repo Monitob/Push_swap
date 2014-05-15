@@ -13,17 +13,16 @@
 #include "libft.h"
 #include "push_swap.h"
 
-void		ft_sort_list2(t_swap **la, t_swap **lb, int *is_sort)
+void		ft_sort_list2(t_swap **la, t_swap **lb)
 {
 	if ((*la)->numb > (*la)->next->numb)
 	{
 		ft_sort_ra(la);
-		*is_sort = 0;
+	
 	}
-	if (((*la)->numb) > (*la)->next->numb)
+	else if (((*la)->numb) > (*la)->next->numb)
 	{
 		ft_sort_sa(la);
-		*is_sort = 0;
 	}
 	(void)lb;
 }

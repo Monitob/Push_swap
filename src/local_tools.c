@@ -13,6 +13,20 @@
 #include "libft.h"
 #include "push_swap.h"
 
+int			ft_is_sort(t_swap *list)
+{
+	t_swap *temp;
+
+	temp = list;
+	while (temp != NULL)
+	{
+		if (temp->next && temp->numb > temp->next->numb)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
+}
+
 int			ft_verify_list(t_swap *l)
 {
 	t_swap	*temp;
