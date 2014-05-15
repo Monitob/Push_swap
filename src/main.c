@@ -11,29 +11,20 @@
 /* ************************************************************************** */
 
 /*
- * la primera cosa que quisiera hacer es de 
- * hacer un parsin de la cadena en caso de que tenga una letra
+ * hacer una funcio que verifique si esta bien triado o no 
  */
 #include <unistd.h>
 #include <stdio.h>
 #include "libft.h"
 #include "push_swap.h"
 
-static void		ft_sort_list2(t_swap **la, t_swap **lb, int *is_sort)
+int			ft_is_sort(t_swap *list)
 {
-	if ((*la)->numb > (*la)->next->numb)
-	{
-		ft_sort_ra(la);
-		*is_sort = 0;
-	}
-	if (((*la)->numb) > (*la)->next->numb)
-	{
-		ft_sort_sa(la);
-		*is_sort = 0;
-	}
-	(void)lb;
-}
+	t_swap *temp;
 
+	temp = list;
+	while
+}
 void		ft_sort_list(t_swap **la, t_swap **lb)
 {
 	t_swap	*temp;
@@ -46,11 +37,11 @@ void		ft_sort_list(t_swap **la, t_swap **lb)
 		while (!is_sort)
 		{
 			is_sort = 1;
-			while (temp != NULL)
+			while (temp->next != NULL)
 			{
-				if ((*la)->numb && (*la)->next->numb && la && temp)
+				if ((temp)->numb && (temp)->next->numb && temp)
 				{
-					ft_sort_list2(la, lb, &is_sort);
+					ft_sort_list2(&temp, lb, &is_sort);
 				}
 				temp = temp->next;
 			}
@@ -80,6 +71,7 @@ void		ft_get_list(char **av)
 		i++;
 	}
 	ft_sort_list(&la, &lb);
+	write(1, "\n", 1);
 	ft_printf_list(la);
 }
 

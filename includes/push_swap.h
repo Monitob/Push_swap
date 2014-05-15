@@ -17,5 +17,6 @@ int			ft_verify_list(t_swap *l);
 void		ft_sort_sa(t_swap **la);
 void		ft_sort_list(t_swap **la, t_swap **lb);
 void		ft_sort_ra(t_swap **la);
+void		ft_sort_list2(t_swap **la, t_swap **lb, int *is_sort);
 
 #endif
