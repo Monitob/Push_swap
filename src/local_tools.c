@@ -6,7 +6,7 @@
 /*   By: jbernabe <jbernabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/14 15:02:50 by jbernabe          #+#    #+#             */
-/*   Updated: 2014/05/16 04:15:52 by jbernabe         ###   ########.fr       */
+/*   Updated: 2014/05/16 23:26:55 by jbernabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int			ft_last_element(t_swap *la)
 {
-	t_swap *temp;
+	t_swap	*temp;
 
 	temp = la;
 	if (!la)
@@ -27,7 +27,7 @@ int			ft_last_element(t_swap *la)
 
 int			ft_is_sort(t_swap *list)
 {
-	t_swap *temp;
+	t_swap	*temp;
 
 	temp = list;
 	while (temp != NULL)
@@ -56,9 +56,9 @@ int			ft_verify_list(t_swap *l)
 	return (0);
 }
 
-int		ft_verify(char *s)
+int			ft_verify(char *s)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	if (ft_fast_strlen(s) > 9)

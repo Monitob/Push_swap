@@ -6,17 +6,16 @@
 /*   By: jbernabe <jbernabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/14 16:00:37 by jbernabe          #+#    #+#             */
-/*   Updated: 2014/05/16 06:18:33 by jbernabe         ###   ########.fr       */
+/*   Updated: 2014/05/16 23:35:17 by jbernabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> //
 #include "libft.h"
 #include "push_swap.h"
 
-static int		is_min(t_swap *p)
+int			is_min(t_swap *p)
 {
-	t_swap *q;
+	t_swap	*q;
 	int		min;
 
 	q = p;

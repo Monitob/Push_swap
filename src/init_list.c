@@ -6,11 +6,10 @@
 /*   By: jbernabe <jbernabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/16 03:45:32 by jbernabe          #+#    #+#             */
-/*   Updated: 2014/05/16 04:44:50 by jbernabe         ###   ########.fr       */
+/*   Updated: 2014/05/16 23:33:00 by jbernabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 #include "push_swap.h"
 
@@ -39,7 +38,7 @@ void		ft_push_front(t_swap **l, char *value)
 	}
 }
 
-t_swap *ft_new_ele(t_swap *ele, char *s)
+t_swap		*ft_new_ele(t_swap *ele, char *s)
 {
 	if (s)
 	{
@@ -53,10 +52,10 @@ t_swap *ft_new_ele(t_swap *ele, char *s)
 	return (NULL);
 }
 
-void	string_to_list(char *s, t_swap **head)
+void		string_to_list(char *s, t_swap **head)
 {
 	t_swap	*new_el;
-	t_swap 	*temp;
+	t_swap	*temp;
 
 	new_el = NULL;
 	temp = NULL;
@@ -75,12 +74,13 @@ void	string_to_list(char *s, t_swap **head)
 
 void		ft_printf_list(t_swap *ele)
 {
-	t_swap *temp;
+	t_swap	*temp;
 
 	temp = ele;
 	while (temp != NULL)
 	{
-		printf("number %d\n", temp->numb);
+		ft_putnbr(temp->numb);
+		ft_putchar('\n');
 		temp = temp->next;
 	}
 }
