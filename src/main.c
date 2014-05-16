@@ -22,19 +22,17 @@ void		ft_sort_list(t_swap **la, t_swap **lb)
 {
 	if (ft_is_sort(*la) != 1)
 	{
-		while ((*la)->next != NULL)
+		while ((*la)->next != NULL && (ft_is_sort(*la)) != 1)
 		{
 			if ((*la)->next && ((*la))->numb && ((*la)->next->numb))
 			 	ft_sort_list2(la, lb);
 		}
-		while ((*lb)->next != NULL)
-		{
+		while ((*lb) != NULL)
 			ft_pa(la, lb);
-		}
 	}
-	printf("omar lb\n");
-	ft_printf_list(*lb);
-	printf("omar la\n");
+	printf("\nthis is final lb\n");
+	ft_printf_list(*lb);	
+	printf("this is finla la\n");
 	ft_printf_list(*la);
 	(void)lb;
 }

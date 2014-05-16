@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h> //
 #include "libft.h"
 #include "push_swap.h"
 
@@ -35,12 +36,7 @@ static int		is_min(t_swap *p)
 void		ft_pa(t_swap **la, t_swap **lb)
 {
 	ft_sort_pb(lb, la);
-	/*if (*lb != NULL)
-	{
-		ft_push_front(la, ft_itoa((*lb)->numb));
-		*lb = (*lb)->next;
-	}*/
-	ft_putendl("pa");
+	ft_putstr("pa ");
 }
 
 void		ft_sort_list2(t_swap **la, t_swap **lb)
@@ -48,13 +44,9 @@ void		ft_sort_list2(t_swap **la, t_swap **lb)
 	if (is_min(*la))
 		ft_sort_pb(la, lb);
 	else if (is_min((*la)->next))
-	{
 		ft_sort_sa(la);
-	}
 	else
-	{
 		ft_sort_ra(la);
-	}
 	return ;
 }
 

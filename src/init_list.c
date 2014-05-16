@@ -22,27 +22,21 @@ void		ft_sort_pb(t_swap **la, t_swap **lb)
 		*la = (*la)->next;
 		ft_putstr("pb ");
 	}
+	return ;
 }
 
 void		ft_push_front(t_swap **l, char *value)
 {
 	t_swap	*new_el;
+	t_swap	*temp;
 
 	new_el = NULL;
 	if ((new_el = ft_new_ele(new_el, value)))
 	{
-		if (*l == NULL)
-			*l = new_el;
-		else
-		{
-			(*l)->prev = NULL;
-			(*l)->prev = new_el;
-			new_el->next = *l;
-			new_el->prev = NULL;
-		}
-		(void)new_el;
+		temp = *l;
+		*l = new_el;
+		new_el->next = temp;
 	}
-	
 }
 
 t_swap *ft_new_ele(t_swap *ele, char *s)
