@@ -6,12 +6,24 @@
 /*   By: jbernabe <jbernabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/14 15:02:50 by jbernabe          #+#    #+#             */
-/*   Updated: 2014/05/14 18:41:30 by jbernabe         ###   ########.fr       */
+/*   Updated: 2014/05/16 04:15:52 by jbernabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
+
+int			ft_last_element(t_swap *la)
+{
+	t_swap *temp;
+
+	temp = la;
+	if (!la)
+		return (0);
+	while (temp->next != NULL)
+		temp = temp->next;
+	return (temp->numb);
+}
 
 int			ft_is_sort(t_swap *list)
 {
