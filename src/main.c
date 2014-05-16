@@ -6,7 +6,7 @@
 /*   By: jbernabe <jbernabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/14 17:47:16 by jbernabe          #+#    #+#             */
-/*   Updated: 2014/05/16 06:01:33 by jbernabe         ###   ########.fr       */
+/*   Updated: 2014/05/16 06:19:06 by jbernabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void		ft_sort_list(t_swap **la, t_swap **lb)
 			if ((*la)->next && ((*la))->numb && ((*la)->next->numb))
 			 	ft_sort_list2(la, lb);
 		}
-		while ((*lb) != NULL)
+		while ((*lb)->next != NULL)
 		{
 			ft_pa(la, lb);
 		}
